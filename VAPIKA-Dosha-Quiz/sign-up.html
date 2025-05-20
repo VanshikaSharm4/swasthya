@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="description" content="Quiz to discover your Ayurvedic Dosha" />
+      <meta name="keywords" content="quiz, dosha, ayurveda, prakruti, holistic" />
+      <meta name="author" content="Celeste Loi" />
+      <link rel="stylesheet" href="assets/css/styles.css" />
+      <!-- Mandala created by Icongeek26 - Flaticon; this commented out code is just for the purpose of attribution: 
+         <a href="https://www.flaticon.com/free-icons/mandala" title="mandala icons">Mandala icons created by Icongeek26 - Flaticon</a>
+         Icon has been converted to the .ico format https://www.icoconverter.com/ -->
+      <link rel="icon" href="assets/images/mandala.ico">
+      <title>VAPIKA Dosha Quiz</title>
+
+      <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+      </script>
+      <!-- <script type="text/javascript">
+       (function(){
+         emailjs.init({
+        publicKey: "3pXdHkRsYdN66eQ9T",
+         });
+         })();
+      </script> -->
+      <script type="text/javascript">
+         (function() {
+            emailjs.init("3pXdHkRsYdN66eQ9T"); // Your Public Key
+            console.log("✅ EmailJS initialized!"); // Debugging Check
+         })();
+      </script>
+      
+
+   </head>
+   <body>
+      <!-- Header containing logo -->
+      <header>
+         <a href="index.html">
+         <img src="assets/images/vapika-logo.png" alt="vapika logo" id="logo" /></a>
+      </header>
+      <main>
+         <div class="container sign-up-container">
+            <!-- Form that takes in user name and email and sends a newsletter confirmation email if correctly submitted -->
+            <form class="signup-form" id="signup-form">
+               <h1 id="sign-up-heading">Thank you for completing the quiz!</h1>
+               <p id="sign-up-p">
+                  Before being redirected to your result, please sign up to our
+                  newsletter to receive monthly tips and recommendations specifically
+                  tailored to your Dosha.
+               </p>
+               <input type="text" id="user-name" name="user-name" required class="text-input"
+                  placeholder="Your name" />
+               <input type="email" id="email" name="email_address" required class="text-input"
+                  placeholder="Your email address" />
+               <textarea id="feedback" name="feedback" rows="4" cols="50"
+                  placeholder="leave us a feedback..."></textarea>
+               <!-- onclick event implementation based on the emailjs tutorial followed on https://martinezjf2.medium.com/how-to-setup-emailjs-33809350f0f8 -->
+               <button class="btn" id="signup-btn" onclick="sendMail(event)">Sign up for newsletter</button>
+            </form>
+            <!-- User can skip the sign-up form and go straight to results -->
+            <button class="btn" id="results-btn">
+            Go to your quiz result
+            </button>
+         </div>
+      </main>
+   
+      <!-- fontawesome script for social media icons -->
+      <script src="https://kit.fontawesome.com/1705e36da1.js" crossorigin="anonymous"></script>
+      <!-- sweetAlert scripts for sign up confirmation pop up window -->
+      <!-- instructions followed on https://sweetalert2.github.io/#download -->
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <!-- EmailJS script -->
+      <!-- Inspired by the tutorial at https://martinezjf2.medium.com/how-to-setup-emailjs-33809350f0f8 -->
+      <script src="assets/js/sign-up.js"></script>
+
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+   </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="Quiz to discover your Ayurvedic Dosha">
+   <meta name="keywords" content="quiz, dosha, ayurveda, prakruti, holistic">
+   <meta name="author" content="Celeste Loi">
+   <link rel="stylesheet" href="assets/css/styles.css">
+   <!-- Mandala created by Icongeek26 - Flaticon; this commented out code is just for the purpose of attribution: 
+         <a href="https://www.flaticon.com/free-icons/mandala" title="mandala icons">Mandala icons created by Icongeek26 - Flaticon</a>
+         Icon has been converted to the .ico format https://www.icoconverter.com/ -->
+   <link rel="icon" href="assets/images/mandala.ico">
+   <title>Dosha Quiz</title>
+</head>
+
+<body id="homepage-body">
+   <!-- Header containing logo -->
+   <header>
+      <a href="index.html"> <img src="assets/images/vapika-logo.png" alt="vapika logo" id="logo" style="width: 12rem;"></a>
+   </header>
+   <main>
+      <!-- Container for main content -->
+      <div class="main-container">
+         <h1>What's your Ayurvedic Dosha?</h1>
+         <p>Discover your unique mind-body type and unlock the secrets to keep yourself in balance, healthy and
+            disease-free.
+         </p>
+         <!-- buttons that open a modal window when clicked -->
+         <button class="modal-btn" id="learn-more-btn">Learn more</button>
+         <button class="modal-btn" id="instructions-btn">Instructions</button>
+         <!-- Modal windows, hidden by default -->
+         <!-- Modal for learn more button -->
+         <div id="learn-more-modal" class="modal homepage-modal">
+            <div class="modal-content">
+               <div class="close-modal-btn-box">
+                  <span class="close close-learn-more">&times;</span>
+               </div>
+               <h1 class="homepage-modal">Ayurveda Fundamentals</h1>
+               <p class="intro">Ayurveda is an ancient <span class="stand-out-text">holistic healing
+                     system</span> developed in India more than <span class="italic-text">3,000 years ago</span>.
+               </p>
+               <p>It's based on the principle that the 5 elements - <span class="stand-out-text">Earth, Fire, Water, Air
+                     and Space</span> - found in the Universe also exist within our bodies. <br> <br>
+                  These elements <span class="italic-text">combine in varying degrees</span> to form the so-called
+                  <span class="stand-out-text">"doshas"</span> (also known as <span class="italic-text">energetic
+                     forces of nature or functional principles</span>):
+                  they are <span class="bold-text">Vata</span> (Air and Space), <span
+                     class="stand-out-text">Pitta</span> (Fire and Water) and <span class="stand-out-text">Kapha</span>
+                  (Water and Earth). <br><br>
+                  Each person has a <span class="italic-text">varying amount of each element and a unique
+                     combination of the doshas</span>,
+                  that describe one's unique constitution (<span class="stand-out-text">Prakruti</span> in Ayurveda).
+               </p>
+               <p class="stand-out-text italic-text">Ayurveda's main purpose is to promote good health and
+                  prevent disease, revolving around the idea that health and wellness depend on
+                  a delicate balance between the body, mind and spirit.
+               </p>
+               <p>The elements govern the way <span class="stand-out-text">our body responds to the outside
+                     influences</span>: <span class="italic-text">food, habits, weather, environment</span>. <br>
+                  So the more you learn about the doshas and your Prakruti, the <span class="italic-text">more you
+                     are able to make the right choices to bring the body back to a state of <span
+                        class="stand-out-text">health and balance!</span></span>
+               </p>
+            </div>
+         </div>
+         <!-- Modal for instructions button -->
+         <div id="instructions-modal" class="modal homepage-modal">
+            <div class="modal-content">
+               <div class="close-modal-btn-box">
+                  <span class="close close-instructions">&times;</span>
+               </div>
+               <h1>How to take the test & what to do with the results</h1>
+               <ol>
+                  <li><i class="fas fa-search stand-out-text"></i> Read each question <span
+                        class="italic-text">carefully</span> and <span class="bold-text stand-out-text">choose the
+                        answer that best describes you</span>.</li>
+                  <li><i class="fas fa-check stand-out-text"></i> Answer each question <span
+                        class="bold-text stand-out-text">as objectively and honestly as possible</span>, focusing on
+                     what has been true
+                     for you throughout your life. If you are struggling with a choice, <span class="italic-text">choose
+                        according to what
+                        best reflects your healthiest, most vibrant period of life.</span>
+                  </li>
+                  <li><i class="fas fa-sticky-note stand-out-text"></i> The quiz result will probably show that you have
+                     a <span class="bold-textstand-out-text">dominant dosha</span>, and a second one that is
+                     less obvious. So for example, you would be Pitta-Vata, Kapha-Pitta etc. You should generally
+                     <span class="italic-text">focus on balancing your dominant dosha</span> and following its
+                     guidelines, but also <span class="bold-text stand-out-text">always being
+                        aware of your second dosha's tendencies and signs of imbalance.</span>
+                  </li>
+                  <li><i class="fas fa-balance-scale stand-out-text"></i> If you end up with a <span
+                        class="bold-text stand-out-text">Tridoshic result</span> (<span class="italic-text">when you
+                        have an even amount of all of the three
+                        doshas</span>), it means you have a fairly balanced constitution. If this is the case, Ayurveda
+                     suggests that you <span class="bold-text stand-out-text">follow a Vata diet and its
+                        guidelines</span> because it's the first dosha that
+                     goes out of balance.
+                  </li>
+               </ol>
+            </div>
+         </div>
+         <button onclick="window.location.href ='dosha-quiz.html'" id="start-quiz">Take the quiz</button>
+      </div>
+   </main>
+ 
+   <script src="https://kit.fontawesome.com/1705e36da1.js" crossorigin="anonymous"></script>
+   <script src="assets/js/script.js"></script>
+</body>
+
+</html>

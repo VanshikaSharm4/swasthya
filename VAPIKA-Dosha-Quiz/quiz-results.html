@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="description" content="Quiz to discover your Ayurvedic Dosha" />
+      <meta name="keywords" content="quiz, dosha, ayurveda, prakruti, holistic" />
+      <meta name="author" content="Celeste Loi" />
+      <link rel="stylesheet" href="assets/css/styles.css" />
+      <!-- Mandala created by Icongeek26 - Flaticon; this commented out code is just for the purpose of attribution: 
+         <a href="https://www.flaticon.com/free-icons/mandala" title="mandala icons">Mandala icons created by Icongeek26 - Flaticon</a>
+         Icon has been converted to the .ico format https://www.icoconverter.com/ -->
+      <link rel="icon" href="assets/images/mandala.ico">
+      <title>VAPIKA Dosha Quiz</title>
+   </head>
+   <body>
+      <!-- Header containing logo -->
+      <header>
+         <a href="index.html">
+         <img src="assets/images/vapika-logo.png" alt="vapika logo" id="logo" /></a>
+      </header>
+      <main>
+         <div class="container" id="results-container">
+            <h1 id="results-heading">
+               <!-- Container to display the user name taken from the sign-up form -->
+               <span id="user-name"></span>
+               your Dosha is 
+               <!-- Container for dosha result calculated in the quiz.js file -->
+               <span id="dosha-result"></span>!
+            </h1>
+            <p id="results-p">Click on the chart to learn more about your dosha!</p>
+            <!-- Color legend for the pie chart -->
+            <div id="chart-legend-div">
+               <div class="dosha-legend">
+                  <div class="legend-color" id="vata-color"></div>
+                  <p>Vata</p>
+               </div>
+               <div class="dosha-legend">
+                  <div class="legend-color" id="pitta-color"></div>
+                  <p>Pitta</p>
+               </div>
+               <div class="dosha-legend">
+                  <div class="legend-color" id="kapha-color"></div>
+                  <p>Kapha</p>
+               </div>
+            </div>
+            <!-- Pie chart container -->
+            <!-- Implemented by following the instructions at https://developers-dot-devsite-v2-prod.appspot.com/chart/interactive/docs/gallery/piechart -->
+            <div id="chart_div"></div>
+            <!-- Modal for Vata Dosha -->
+            <div id="vata-modal" class="modal dosha-modal">
+               <div class="modal-content">
+                  <span class="close close-vata close-modal-btn-box">&times;</span>
+                  <img src="assets/images/vata.png" alt="Vata Dosha elements" class="dosha-img">
+                  <h1>Vata</h1>
+                  <!-- Vata dosha introduction -->
+                  <p class="intro">The Vata dosha is responsible for <span
+                     class="stand-out-text italic-text">communication, movement and elimination of all wastes</span>
+                     from the
+                     body. 
+                  </p>
+                  <!-- Vata dosha general characteristics -->
+                  <p>
+                     Vata types find it <span class="stand-out-text">hard to sit still</span> and have <span
+                        class="stand-out-text">wild imaginations</span>. They may be more fearful ad
+                     anxious of everyday things than others and tend to be light sleepers.<span
+                        class="italic-text">Vatas suffer under stress
+                     and are greatly affected by the moods of those around them.</span> When things get
+                     overwhelming for
+                     them, <span class="stand-out-text">they may just drift off into their minds</span> where things are
+                     more comfortable for them.
+                  </p>
+                  <p>
+                     This dosha is <span class="stand-out-text">drawn to the spiritual and seeks out more esoteric
+                     experiences</span> than the other two
+                     doshas.<span class="italic-text">It can be shy, insecure and awkward in social situations</span>
+                     and one of the biggest
+                     challenges for Vatas is to <span class="bold-text">come to a place of self-acceptance</span>.
+                  </p>
+                  <!-- Vata dosha Elements  -->
+                  <h2>Elements</h2>
+                  <p> <span class="stand-out-text">Earth, Fire and Water</span> are the elements that calm this dosha. It's
+                     also recommended to <span class="italic-text">avoid
+                     bitter, pungent and astringent</span> tastes that aggravate Vata, having the more balancing
+                     <span class="stand-out-text">sweet, sour
+                     and salty tastes </span> instead.
+                  </p>
+                  <h2>Signs of Imbalance & Triggers</h2>
+                  <p><span class="stand-out-text">Symptoms usually appear first in the gut or the mind.</span> An
+                     imbalanced Vata can complain an <span class="italic-text">upset
+                     stomach, constipation, experience anxiety, weight loss, restlessness, fatigue, insomnia,
+                     hypertension, inability to concentrate, tremors or a nervous system disorder.</span> Other
+                     indicators
+                     are <span class="italic-text">dry cracked skin and lips, arthritis and joint pain.</span>
+                  </p>
+                  <br>
+                  <!-- Vata dosha triggers unordered list -->
+                  <h3 class="stand-out-text">Triggers for a Vata imbalance are: </h3>
+                  <ul>
+                     <li>Eating too much cold, icy foods and drinks (especially whatever produces gas in the body)
+                     </li>
+                     <li>Excess raw food</li>
+                     <li>Irregular meals or skipping meals</li>
+                     <li>Too much travel</li>
+                     <li>Being outside in the cold and wind</li>
+                     <li>Lack of sleep and routine</li>
+                     <li>Spending too much time in front of the computer and TV</li>
+                     <li>Stress</li>
+                  </ul>
+                  <!-- Vata dosha balancing unordered list -->
+                  <h2>Balancing Vata</h2>
+                  <ul>
+                     <li><span>Gentle calming exercise</span> such as yoga, quigung, dance, golf, walking, swimming
+                     <li>Listening to calming music</li>
+                     <li>Gardening, pottery, cooking</li>
+                     <li>Massage, meditation and getting to bed early</li>
+                     <li>Ghee added to food and drinks</li>
+                     <li>Drinking warm milky drinks with cardamom and cinnamon</li>
+                  </ul>
+               </div>
+            </div>
+            <!-- Modal for Pitta Dosha -->
+            <div id="pitta-modal" class="modal dosha-modal">
+               <div class="modal-content">
+                  <span class="close close-pitta close-modal-btn-box">&times;</span>
+                  <img src="assets/images/pitta.png" alt="Pitta Dosha elements" class="dosha-img">
+                  <h1>Pitta</h1>
+                  <!-- Pitta dosha introduction -->
+                  <p class="intro">Pitta individuals are dominated by the <span class="stand-out-text">element of fire</span>, which is what creates heat in the body
+                     and is responsible for <span class="stand-out-text italic-text">metabolising, processing and digesting all of our thoughts and food
+                     ingested</span>.
+                  </p>
+                  <!-- Pitta dosha general characteristics -->
+                  <p>With <span class="stand-out-text">strong and athletic bodies</span>, Pittas individuals are <span class="italic-text">driven, competitive, and like to be in
+                     control and at the centre of attention</span>.
+                     Their <span class="italic-text">go-to emotion is anger</span> and they will always ensure
+                     you understand their point of view by using their <span class="italic-text">sharp tongues</span>.
+                     <span class="stand-out-text">Their life lesson is to learn how to control their ego and fiery mind/nature</span>.
+                     Pitta personalities have a <span class="italic-text">strong intellect and a strong digestion, they are perfectionists and
+                     are great at creating, planning, organising and executing</span> (as long as they are in charge).
+                  </p>
+                  <!-- Pitta dosha elements -->
+                  <h2>Elements</h2>
+                  <p>Being the dosha dominated by <span class="stand-out-text">Fire and Water</span>, adding more Fire to it would only bring troubles!
+                     This is why the <span class="stand-out-text">elements that calm Pitta are Air, Water and Earth</span>. Tastes that will help calming
+                     your fire are <span class="stand-out-text">sweet, bitter and astringent</span> (you should really be avoiding <span class="italic-text">salty, sour and
+                     pungent foods</span>).
+                  </p>
+                  <h2>Signs of imbalance & triggers</h2>
+                     <p class="italic-text">Irritability, agressive behaviour, impatience and anger,
+                     skin rashes, heartburn, reflux, peptic ulcers,
+                     headaches, eye problems, early greying, hot flushes,
+                     waking in the middle of the night and being unable to go back to sleep, excess sweating, acne,
+                     blood shot eyes and heavy periods.</p>
+                     <br> <br>
+                     <!-- Pitta dosha triggers unordered list -->
+                     <h3 class="stand-out-text">What might be triggering a Pitta imbalance is:</h3>
+                  <ul>
+                     <li>Excess meat in the diet</li>
+                     <li>Too much alcohol</li>
+                     <li>Overanalysing or overworking</li>
+                     <li>Overexposure to heat and sun</li>
+                     <li>Intense conversations, pushing oneself too hard, emotional trauma, holding emotions in</li>
+                     <li>Skipping meals or fasting</li>
+                  </ul>
+                  <!-- Pitta dosha balancing unordered list -->
+                  <h2>Balancing Pitta</h2>
+                  <ul>
+                     <li>Gentle calming exercise</li>
+                     <li>Spending time in nature</li>
+                     <li>Being by the water</li>
+                     <li>Eating when you're hungry
+                        rather than when starving
+                     </li>
+                     <li>Moonlight walks & yoga</li>
+                     <li>Non-competitive sports; walking and swimming</li>
+                     <li>Gardening, writing, meditation</li>
+                     <li>Massage with coconut oil for its cooling effect</li>
+                     <li>Getting to bed before
+                        10pm
+                     </li>
+                     <li>Staying cool and sipping cool herbal teas</li>
+                  </ul>
+               </div>
+            </div>
+            <!-- Modal for Kapha Dosha -->
+            <div id="kapha-modal" class="modal dosha-modal">
+               <div class="modal-content">
+                  <span class="close close-kapha close-modal-btn-box">&times;</span>
+                  <img src="assets/images/kapha.png" alt="Kapha Dosha elements" class="dosha-img">
+                  <h1>Kapha</h1>
+                  <!-- Kapha dosha introduction -->
+                  <p class="intro">Kaphas are <span class="stand-out-text">caring, maternal, graceful, sensual types</span>. It is said that without Kaphas there would
+                     be no home, no children and no family, as <span class="stand-out-text italic-text">Kapha energy ensures the stability and foundation of
+                     the home</span>.
+                  </p>
+                  <!-- Kapha dosha general characteristics -->
+                  <p>
+                     They have a <span class="stand-out-text">slow metabolism and weight issues are a constant issue</span>. Kaphas are slow learners but
+                     they never seem to forget; <span class="stand-out-text">they're the most happy in their own company or being with family</span>.
+                     The Kapha dosha is a <span class="italic-text">heavy sleeper, slow walker, talker and thinker and won't be rushed into
+                     decisions about anything</span>. He has a stubborn <span class="italic-text">aversion to change</span> and will often get stuck in
+                     unhappy relatonships or work situations for long periods of time.
+                  </p>
+                  <!-- Kapha dosha elements -->
+                  <h2>Elements</h2>
+                  <p>Elements that calm this dosha are <span class="stand-out-text">Fire, Air and Space</span>, as opposed to Water and Earth. <span class="stand-out-text">Bitter,
+                     pungent and astringent</span> are the tastes that Kaphas should be looking for in their diet.
+                  </p>
+                  <h2>Signs of imbalance & triggers</h2>
+                     <p class="italic-text">Feeling unmotivated,
+                     self-isolation and withdrawal from friends,
+                     lethargy, laziness, difficulty getting out of bed,
+                     overeating or eating for comfort (especially sweet and fatty foods),
+                     weight gain, fluid retention, coughs and colds,
+                     depression and moodiness.</p>
+                     <br> <br>
+                     <!-- Kapha dosha triggers unordered list -->
+                     <h3 class="stand-out-text">An unbalanced Kapha is triggered by:</h3>
+                  <ul>
+                     <li>Excess dairy in the diet</li>
+                     <li>Too much alcohol or sweet drinks </li>
+                     <li>Overexposure to cold, dump environments</li>
+                     <li>Lack of exercise</li>
+                     <li>Sleeping during the day and going to bed with wet hair</li>
+                     <li>Sitting around doing nothing for a prolonged amount of time</li>
+                  </ul>
+                  <!-- Kapha dosha balancing unordered list -->
+                  <h2>Balancing Kapha</h2>
+                  <ul>
+                     <li>Vigorous exercise (especially in the morning between 6am-10am)</li>
+                     <li>Running, cycling, aerobic activity and competitive sports</li>
+                     <li>Learning a new skill,stimulating the mind</li>
+                     <li>Changing or varying your daily routine</li>
+                     <li>Travelling</li>
+                     <li>Seeking out new friendships and meeting new people (whatever gets you out of your
+                        comfort zone)
+                     </li>
+                     <li>Have your main meal at lunchtime</li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </main>
+      
+      <!-- fontawesome script for social media icons -->
+      <script src="https://kit.fontawesome.com/1705e36da1.js" crossorigin="anonymous"></script>
+      <!-- Google charts script -->
+      <!--Load the AJAX API-->
+      <script src="https://www.gstatic.com/charts/loader.js"></script>
+      <!-- js script -->
+      <script src="assets/js/results.js"></script>
+   </body>
+</html>

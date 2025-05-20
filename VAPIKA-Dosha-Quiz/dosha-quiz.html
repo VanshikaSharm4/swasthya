@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="description" content="Quiz to discover your Ayurvedic Dosha" />
+      <meta name="keywords" content="quiz, dosha, ayurveda, prakruti, holistic" />
+      <meta name="author" content="Celeste Loi" />
+      <link rel="stylesheet" href="assets/css/styles.css" />
+      <!-- Mandala created by Icongeek26 - Flaticon; this commented out code is just for the purpose of attribution: 
+         <a href="https://www.flaticon.com/free-icons/mandala" title="mandala icons">Mandala icons created by Icongeek26 - Flaticon</a>
+         Icon has been converted to the .ico format https://www.icoconverter.com/ -->
+      <link rel="icon" href="assets/images/mandala.ico">
+      <title>VAPIKA Dosha Quiz</title>
+   </head>
+   <body>
+      <!-- Header containing logo -->
+      <header>
+         <a href="index.html">
+         <img src="assets/images/vapika-logo.png" alt="vapika logo" id="logo" /></a>
+      </header>
+      <main>
+         <div class="container">
+            <!-- Question counter block that updates at each question -->
+            <div id="question-counter">
+               Question: <span id="current-question">0</span> of 18
+            </div>
+            <!-- Quiz question block -->
+            <div id="question-text"></div>
+            <div class="options">
+               <!-- Quiz answer option buttons -->
+               <button class="btn btn-option" id="vata-option"></button>
+               <button class="btn btn-option" id="pitta-option"></button>
+               <button class="btn btn-option" id="kapha-option"></button>
+            </div>
+            <div class="controls">
+               <!-- Button to go to the next question -->
+               <button class="btn" id="btn-next">Next question</button>
+            </div>
+         </div>
+      </main>
+     
+      <!-- fontawesome script for social media icons -->
+      <script src="https://kit.fontawesome.com/1705e36da1.js" crossorigin="anonymous"></script>
+      <!-- js script -->
+      <script src="assets/js/quiz.js"></script>
+      <!-- Script for using sweetAlert for the pop up window that shows up if the user tries to skip a question -->
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+   </body>
+</html>
