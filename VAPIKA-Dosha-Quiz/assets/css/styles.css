@@ -1,0 +1,426 @@
+
+/* Import Tenor Sans and Sen from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Sen&family=Tenor+Sans&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: "Sen", sans-serif;
+    font-size: 1.7em;
+}
+#homepage-body {
+    background: #E7E8EA url(../images/background-desktop.png) no-repeat 20% 90%;
+    background-size: cover;
+}
+header {
+    text-align: center;
+}
+#logo {
+    width: 13rem;
+}
+main {
+    padding-bottom: 4rem;
+}
+.main-container {
+    width: 55%;
+    text-align: center;
+    margin-left: 3rem;
+}
+h1 {
+    font-family: "Tenor Sans", sans-serif;
+    color: #008080;
+}
+p {
+    line-height: 3rem;
+    margin-top: 1rem;
+}
+.modal-btn {
+    margin: 2rem 1rem;
+}
+.modal p{
+    margin-bottom: 3rem;
+}
+/* Styles for learn more and instructions buttons modal windows */
+/* Modal window is hidden by deafult */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+/* Modal Content/Box */
+.modal-content {
+    background-color: #e7e8ea;
+    margin: 0 auto;
+    padding: 2rem 5rem;
+    border: 1px solid #888;
+    width: 85%;
+}
+.modal-content h1 {
+    color: #008080 !important;
+    margin: 7rem 0 3rem;
+    font-size: 6rem;
+}
+.modal-content h2{
+    color: #008080;
+    margin-top: 1rem;
+}
+.modal-content p{
+    line-height: normal;
+    text-align: justify;
+    font-size: 1.7rem;
+}
+.modal-content li{
+    margin: 2rem 0;
+    text-align: center;
+    list-style-type: none;
+    font-size: 1.6rem;
+    line-height: 2.3rem;
+    padding-bottom: 0.7rem;
+    border-bottom: 2px dotted #008080;
+}
+
+/* Modal window content text styling */
+.italic-text{
+    font-style: italic;
+}
+.intro{
+    font-size: 1.8rem !important;
+    font-family: "Tenor Sans", sans-serif;
+    text-align: center !important;
+    line-height: 3rem !important;
+}
+
+.stand-out-text{
+    font-weight: bold;
+    color: #008080 !important;
+    font-size: 1.8rem !important;
+    font-family: "Tenor Sans", sans-serif;
+    line-height: 2.3rem !important;
+}
+/* Modal close btn */
+.close-modal-btn-box {
+    position: fixed;
+    right: 9%;
+    top: 5%;
+    background-color: #008080;
+    color: #E7E8EA !important;
+    float: right;
+    font-size: 2rem;
+    width: 40px;
+    cursor: pointer;
+}
+.homepage-modal h1{
+    font-size: 3rem;
+}
+button {
+    background-color: #008080;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    font-family: "Tenor Sans", sans-serif;
+    cursor: pointer;
+}
+button:hover {
+    box-shadow: 0 12px 16px 0 rgba(159, 126, 116, 0.24), 0 17px 50px 0 rgba(159, 126, 116, 0.19);
+}
+#start-quiz {
+    display: block;
+    font-size: 2.2rem;
+    margin: 1rem auto;
+}
+footer {
+    background-color: #008080;
+    border-top: 2px solid #e7e8ea;
+    padding: 1rem 3rem;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4rem;
+}
+footer i {
+    color: #e7e8ea;
+}
+.social-container {
+    display: flex;
+    justify-content: space-between;
+}
+/* Quiz page styles */
+.container {
+    width: 50%;
+    background-color: #008080;
+    color: #e7e8ea;
+    padding: 2rem 0;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+#question-counter {
+    font-size: 1rem;
+}
+#question-text {
+    margin: 2rem 2rem 0;
+    font-family: "Tenor Sans", sans-serif;
+}
+.btn-option {
+    background-color: #e7e8ea;
+    color: black;
+    border: 1px solid black;
+    display: block;
+    width: 80%;
+    margin: 1rem auto 0;
+    padding: 2rem;
+    font-family: "Sen", sans-serif;
+    text-transform: lowercase;
+}
+/* Overwite sweet Alert styles */
+.swal-button {
+    background: #008080;
+    font-family: "Tenor Sans", sans-serif;
+}
+.swal-button:not([disabled]):hover {
+    background-color: #E7E8EA;
+    color: #008080;
+    border: 2px solid #008080;
+}
+.swal-title {
+    font-family: "Tenor Sans", sans-serif;
+}
+.selected-answer {
+    background-color: rgba(3, 3, 3, 0.3);
+    color: #E7E8EA;
+    border: 1px solid #E7E8EA;
+}
+.controls {
+    margin: 0 auto;
+}
+.controls button {
+    margin-top: 2rem;
+    color: black;
+    background-color: #e7e8ea;
+}
+/* Sign up page styles*/
+.sign-up-container {
+    padding: 2rem 3rem;
+    margin-bottom: 2rem;
+}
+#sign-up-heading {
+    color: #e7e8ea;
+    margin-bottom: 2rem;
+}
+#sign-up-p {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    margin-bottom: 2rem;
+}
+.signup-form input, .signup-form textarea {
+    display: block;
+    margin: 1rem auto;
+    padding: 0.8rem;
+    text-align: center;
+    width: 80%;
+}
+.sign-up-container .btn {
+    background-color: #e7e8ea;
+    margin-top: 1rem;
+}
+.sign-up-container button {
+    font-weight: bold;
+}
+.sign-up-container button:hover {
+    color: black;
+}
+/* Results page */
+#results-container {
+    padding: 2rem;
+}
+#results-container h1 {
+    margin: 0 0 3rem;
+    color: rgba(231, 232, 234, 0.7);
+    font-family: "Sen", sans-serif;
+    font-size: 3rem;
+    font-weight: 300;
+}
+#results-container h1 span{
+    font-size: 3.2rem;
+    font-family: "Tenor Sans", sans-serif;
+    color: #E7E8EA;
+    font-weight: bold;
+}
+#chart-legend-div {
+    margin-top: 3rem;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+}
+.legend-color {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #E7E8EA;
+    margin: 0 auto;
+}
+#vata-color {
+    background-color: #8accf2;
+}
+#pitta-color {
+    background-color: #f7cf97;
+}
+#kapha-color {
+    background-color: #c3fabb;
+}
+#chart_div {
+    width: 100%;
+    height: 300px;
+    margin: 3rem auto;
+}
+/* Results page modal windows styling */
+.dosha-img{
+    width: 50%;
+}
+.dosha-modal *{
+    color: black;
+}
+.dosha-modal h1{
+    font-family: "Tenor Sans", sans-serif !important;
+    font-weight: bold !important;
+}
+.dosha-modal h3{
+    font-size: 2rem !important;
+}
+.dosha-modal li{
+    list-style-type: square;
+}
+/* Media queries */
+/* Media queries for large and medium devices (landscape tablets, laptops/desktops 1021 px and down) */
+@media only screen and (max-width: 1021px) {
+    main {
+        margin-top: 0;
+   }
+    #start-quiz {
+        margin: 0 auto 1.3rem 
+   }
+    .main-container {
+        width: 65%;
+        margin-left: 2rem;
+   }
+    .container {
+        width: 70%;
+   }
+}
+/* media queries for medium and small devices (portrait tablets and large phones, 768px and down) */
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 1.5rem;
+   }
+    main {
+        margin-top: 1rem;
+   }
+    .modal-btn {
+        display: block;
+        margin: 1rem auto;
+        padding: 0.7rem 1rem;
+   }
+    #start-quiz {
+        font-size: 2rem;
+   }
+}
+/* Media queries for small/extra small devices (phones and large phones, 666px and down) */
+@media only screen and (max-width: 666px) {
+    #homepage-body {
+        background-image: none;
+   }
+    .main-container {
+        width: 80%;
+        margin: 2rem auto;
+   }
+    .modal-btn {
+        margin-top: 2rem;
+   }
+    #start-quiz {
+        margin-top: 3rem;
+   }
+    .close-modal-btn-box{
+        right: 5%;
+   }
+    .modal-content {
+        padding: 1rem 2rem;
+        width: 95%;
+   }
+    .homepage-modal h1{
+        font-size: 3rem;
+   }
+    .container {
+        width: 95%;
+   }
+    #sign-up-heading {
+        font-size: 2.2rem;
+   }
+
+   .dosha-img{
+    width: 80%;
+}
+}
+@media only screen and (max-width: 450px) {
+    .main-container h1 {
+        font-size: 2.5rem;
+   }
+    .main-container p {
+        font-size: 1.5rem;
+   }
+    #start-quiz {
+        font-size: 1.4rem;
+   }
+    .dosha-modal h1 {
+        font-size: 4rem !important;
+   }
+
+   .dosha-modal p,
+   .dosha-modal li{
+    font-size: 1.4rem;
+   }
+
+   .homepage-modal h1{
+        font-size: 2.2rem;
+   }
+
+   .stand-out-text{
+    font-size: 1.5rem !important;
+}
+    .intro{
+        font-size: 1.4rem !important;
+   }
+    .modal-content p{
+        text-align: center;
+        line-height: 2.3rem;
+   }
+    .sign-up-container {
+        padding: 1rem 2rem 2rem;
+   }
+    #sign-up-heading {
+        margin-top: 1rem;
+        font-size: 1.7rem;
+   }
+    #chart-legend-div {
+        flex-direction: column;
+   }
+    #results-container h1{
+        font-size: 2rem;
+        line-height: 3rem;
+   }
+    #results-container h1 span{
+        font-size: 2.5rem;
+   }
+}
