@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayurvedic Wellness Center</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --primary-color: #008080;
+            --secondary-color: #20B2AA;
+            --accent-color: #2E8B57;
+            --light-bg: #E0F2F1;
+            --text-color: #2C3E50;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--light-bg);
+        }
+
+        .main-services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            padding: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .inner-services {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 128, 128, 0.1);
+            transition: transform 0.3s ease;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .inner-services:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .inner-services h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .inner-services p {
+            color: var(--text-color);
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        .service-heading {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .service-heading h2 {
+            color: var(--primary-color);
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .service-heading p {
+            color: var(--text-color);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .service-heading h2 {
+                font-size: 2.5rem;
+            }
+            
+            .service-heading p {
+                font-size: 1.1rem;
+            }
+            
+            .inner-services h3 {
+                font-size: 1.6rem;
+            }
+            
+            .inner-services p {
+                font-size: 1rem;
+            }
+            
+            .main-services {
+                grid-template-columns: 1fr;
+                padding: 1.5rem;
+                gap: 1.5rem;
+            }
+        }
+
+        /* Add modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        .modal-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .modal-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .modal-description {
+            color: var(--text-color);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-benefits {
+            background-color: var(--light-bg);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-benefits h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-benefits ul {
+            list-style-type: disc;
+            padding-left: 1rem;
+        }
+
+        .modal-benefits li {
+            margin-bottom: 0.5rem;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .response-prompt {
+            background-color: var(--light-bg);
+            padding: 0.8rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            text-align: center;
+            font-style: italic;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body> 
+
+    <!-- Add modal structure -->
+    <div id="treatmentModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-icon" id="modalIcon"></div>
+            <h2 class="modal-title" id="modalTitle"></h2>
+            <p class="modal-description" id="modalDescription"></p>
+            <div class="modal-benefits">
+                <h4>Benefits:</h4>
+                <ul id="modalBenefits"></ul>
+            </div>
+            <div class="response-prompt">
+                <p>Please keep your responses under 30 words for better clarity.</p>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        
+        <div class="logo"><img src="images/main-logo.png" alt=""></div>
+
+        <nav class="navbar">
+            <a href="">Home</a>
+            <a href="#Home">About</a>
+            <!-- <a href="#Home">Service</a>
+            <a href="#Home">Gallery</a>
+            <a href="#Home">Blog</a> -->
+            <a href="#Home">Contact</a>
+        </nav>
+
+        <div class="right-icons">
+            <div id="menu-bars" class="fas fa-bars"></div>
+            <div class="btn">Make Appointment</div>
+        </div>
+
+    </header>
+
+    <!-- header section ended -->
+
+    <!-- Home section started -->
+
+        <div class="main-home">
+
+            <div class="home">
+                <div class="home-left-content">
+                    <h2>We take care our<br> Patients Healths</h2>
+                    <p class="lorem">Ayurveda uses a variety of treatments, including nutrition, lifestyle changes, herbal medicine, massage, acupuncture, and yoga </p>
+                
+                        <div class="home-btn">
+                            <a href="">Get Appointment</a>
+                            <!-- <a class="homebtnsec" href="">Appointment</a> -->
+                        </div>
+                        
+                    </div>
+
+                <div class="home-right-content">
+                    <img src="images/hero2.png" alt="">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- <div class="technology">
+            <div class="main-technology">
+                
+                <div class="inner-technology">
+                    <span></span>
+                    <i class="fi fi-tr-hands-heart"></i>
+                    <h2>Quality & Safety</h2>
+                    <p>Our Delmont hospital utilizes state of the art technology and employs a team of true experts.</p>
+                </div>
+
+                <div class="inner-technology">
+                    <span></span>
+                    <i class="fi fi-rr-doctor"></i>
+                    <h2>Quality & Safety</h2>
+                    <p>Our Delmont hospital utilizes state of the art technology and employs a team of true experts.</p>
+                </div>
+
+                <div class="inner-technology">
+                    <span></span>
+                    <i class="fi fi-tr-user-md"></i>
+                    <h2>Quality & Safety</h2>
+                    <p>Our Delmont hospital utilizes state of the art technology and employs a team of true experts.</p>
+                </div>
+            </div>
+        </div> -->
+
+    <!-- home section ends -->
+
+    <!-- About us section started -->
+
+        <div class="main-about">
+
+            <div class="about-heading">About Us</div>
+
+            <div class="inner-main-about">
+                <div class="about-inner-content-left">
+                    <img src="images/about1.png" alt="">
+                </div>
+
+                <div class="about-inner-content">
+                    <div class="about-right-content">
+                        <h2>Ayurveda is the ancient system of Indian medicine, meaning 'knowledge of life.' It has the capability for both the prevention and treatment of diseases (Warrier, 2011).</h2>
+                        <p>We provide the most full medical services, so every person could have the pportunity 
+                         o receive qualitative medical help.</p>
+                        <p class="aboutsec-content">
+                            Ayurveda is an alternative medicine system with historical roots in the Indian subcontinent.
+                             It is heavily practiced throughout India and Nepal, where as much as 80% of the population report using ayurveda.                            </p>
+                            <button class="aboutbtn">Read More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- About us section ends -->
+
+    <!-- our doctors -->
+
+        <div class="main-doctors">
+            <div class="doctors-heading">
+                <h2>Our Doctors</h2>
+            </div>
+
+            <div class="main-inner-doctor">
+            
+
+
+                <div class="doc-poster">
+                    <div class="doc-icons">
+                        <!-- <i class="fa-solid fa-share"></i> -->
+                       <a href="https://ayurvedapure.com/"><i class="fa-solid fa-eye"></i></a>
+                        <!-- <i class="fa-solid fa-heart"></i> -->
+                    </div>
+                    <img src="https://ayurvedapure.com/assets/images/team/Dr%20Rajesh%20Tayal.png" alt="">
+                    <div class="doc-details">
+                        
+                        <h2>Dr. Tayal</h2>
+                        <button class="btndoc" onclick="bookDoctor('Dr. Tayal', `https://ayurvedapure.com/assets/images/team/Dr%20Rajesh%20Tayal.png`, 'Ayurveda Specialist')">Book</button>
+                        
+                    </div>
+                </div>
+
+                <div class="doc-poster">
+                    <div class="doc-icons">
+                        <!-- <i class="fa-solid fa-share"></i> -->
+                        <a href="https://www.ayurvedanorthindia.com/#"><i class="fa-solid fa-eye"></i></a>
+                        <!-- <i class="fa-solid fa-heart"></i> -->
+                    </div>
+                    <img src="https://images.jdmagicbox.com/comp/chandigarh/w2/0172px172.x172.150803170509.t0w2/catalogue/dr-ajayita-chanana-ayamveda-chandigarh-sector-30c-chandigarh-ayurvedic-doctors-5k9xtpdi1j.jpg" alt="">
+                    <div class="doc-details">
+                        <h2>Dr. Ajayita</h2>
+                        <button class="btndoc" onclick="bookDoctor('Dr. Ajayita', 'https://images.jdmagicbox.com/comp/chandigarh/w2/0172px172.x172.150803170509.t0w2/catalogue/dr-ajayita-chanana-ayamveda-chandigarh-sector-30c-chandigarh-ayurvedic-doctors-5k9xtpdi1j.jpg', 'Ayurvedic Expert')">Book</button>                    </div>
+                </div>
+
+                <div class="doc-poster">
+                    <div class="doc-icons">
+                       <a href="https://ayurvediccarecentre.com/"> <i class="fa-solid fa-eye"></i></a>
+                       
+                    </div>
+                    <img src="https://images1-fabric.practo.com/practices/1193508/ayurvedic-care-centre-chandigarh-5b1e628fa142e.jpg" alt="">
+
+                    <div class="doc-details">
+                        <h2>Dr. Khatana</h2>
+                        <button class="btndoc" onclick="bookDoctor('Dr. Khatana', 'https://images1-fabric.practo.com/practices/1193508/ayurvedic-care-centre-chandigarh-5b1e628fa142e.jpg', 'Holistic Ayurveda Specialist')">Book</button>                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    <!-- our doctors ended -->
+
+    <!-- our services -->
+    <div class="our-service">
+        <div class="service-heading">
+            <h2>Ayurvedic Treatments</h2>
+            <p>Experience the ancient wisdom of Ayurveda through our specialized treatments</p>
+        </div>
+
+        <div class="main-services">
+            <div class="inner-services" onclick="openModal('Panchakarma', 'Complete detoxification and rejuvenation therapy for holistic wellness and balance restoration.', 'fa-spa', [
+                'Removes toxins from the body',
+                'Improves digestion and metabolism',
+                'Enhances immunity',
+                'Promotes mental clarity',
+                'Rejuvenates the body and mind'
+            ])">
+                <div class="service-icon">
+                    <i class="fas fa-spa"></i>
+                </div>
+                <h3>Panchakarma</h3>
+                <p>Complete detoxification and rejuvenation therapy for holistic wellness and balance restoration.</p>
+            </div>
+
+            <div class="inner-services" onclick="openModal('Abhyanga', 'Full body massage with medicated oils to improve circulation and promote relaxation.', 'fa-hand-holding-heart', [
+                'Improves blood circulation',
+                'Relieves muscle tension',
+                'Promotes better sleep',
+                'Nourishes the skin',
+                'Reduces stress and anxiety'
+            ])">
+                <div class="service-icon">
+                    <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <h3>Abhyanga</h3>
+                <p>Full body massage with medicated oils to improve circulation and promote relaxation.</p>
+            </div>
+
+            <div class="inner-services" onclick="openModal('Shirodhara', 'Continuous oil flow therapy for mental relaxation and stress relief.', 'fa-tint', [
+                'Calms the nervous system',
+                'Improves sleep quality',
+                'Reduces stress and anxiety',
+                'Enhances mental clarity',
+                'Relieves headaches and migraines'
+            ])">
+                <div class="service-icon">
+                    <i class="fas fa-tint"></i>
+                </div>
+                <h3>Shirodhara</h3>
+                <p>Continuous oil flow therapy for mental relaxation and stress relief.</p>
+            </div>
+
+            <div class="inner-services">
+                <div class="service-icon">
+                    <i class="fas fa-fire"></i>
+                </div>
+                <h3>Swedana</h3>
+                <p>Herbal steam therapy for detoxification and improved circulation.</p>
+            </div>
+
+            <div class="inner-services">
+                <div class="service-icon">
+                    <i class="fas fa-bath"></i>
+                </div>
+                <h3>Basti</h3>
+                <p>Medicated enema therapy for internal cleansing and digestive health.</p>
+            </div>
+
+            <div class="inner-services">
+                <div class="service-icon">
+                    <i class="fas fa-wind"></i>
+                </div>
+                <h3>Nasya</h3>
+                <p>Nasal therapy for respiratory health and mental clarity.</p>
+            </div>
+
+            <div class="inner-services">
+                <div class="service-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3>Virechana</h3>
+                <p>Purgation therapy for internal cleansing and Pitta balance.</p>
+            </div>
+
+            <div class="inner-services">
+                <div class="service-icon">
+                    <i class="fas fa-water"></i>
+                </div>
+                <h3>Vamana</h3>
+                <p>Therapeutic emesis for Kapha disorders and respiratory health.</p>
+            </div>
+
+            <div class="inner-services">
+                <div class="service-icon">
+                    <i class="fas fa-hand-sparkles"></i>
+                </div>
+                <h3>Udvartana</h3>
+                <p>Herbal powder massage for skin health and weight management.</p>
+            </div>
+
+            <div class="inner-services">
+                <div class="service-icon">
+                    <i class="fas fa-hand-holding-water"></i>
+                </div>
+                <h3>Pizhichil</h3>
+                <p>Oil bath therapy for rejuvenation and muscle relaxation.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal functionality
+        const modal = document.getElementById('treatmentModal');
+        const closeBtn = document.querySelector('.close-modal');
+
+        function openModal(title, description, iconClass, benefits) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalDescription').textContent = description;
+            document.getElementById('modalIcon').innerHTML = `<i class="fas ${iconClass}"></i>`;
+            
+            const benefitsList = document.getElementById('modalBenefits');
+            benefitsList.innerHTML = '';
+            benefits.forEach(benefit => {
+                const li = document.createElement('li');
+                li.textContent = benefit;
+                benefitsList.appendChild(li);
+            });
+
+            modal.style.display = 'flex';
+        }
+
+        closeBtn.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Existing bookDoctor function
+        function bookDoctor(name, image, specialization) {
+            const url = `bookdoc.html?name=${encodeURIComponent(name)}&image=${encodeURIComponent(image)}&specialization=${encodeURIComponent(specialization)}`;
+            window.location.href = url;
+        }
+    </script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
