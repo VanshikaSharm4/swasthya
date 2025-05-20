@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herbal Remedies</title>
+    <link rel="stylesheet" href="ayurvedic.css">
+</head>
+<body>
+  <section class="herbal-remedies">
+    <h2>Herbal Remedies</h2>
+    <p>Discover the benefits of powerful Ayurvedic herbs for holistic well-being.</p>
+    <div class="herb-container">
+      <div class="herb" data-name="Turmeric">
+        <img src="turmeric.jpg" alt="Turmeric">
+        <h3>Turmeric</h3>
+        <p>Powerful anti-inflammatory, boosts immunity, and promotes glowing skin.</p>
+      </div>
+      <div class="herb" data-name="Ashwagandha" data-image="ashwagandha.jpg">
+        <img src="ashwagandha.jpg" alt="Ashwagandha">
+        <h3>Ashwagandha</h3>
+        <p>Reduces stress, enhances brain function, and supports energy levels.</p>
+      </div>
+      <div class="herb" data-name="Tulsi" data-image="tulsi.jpg">
+        <img src="tulsi.jpg" alt="Tulsi">
+        <h3>Tulsi</h3>
+        <p>Boosts respiratory health, fights infections, and improves digestion.</p>
+      </div>
+      <div class="herb" data-name="Neem" data-image="neem.jpg">
+        <img src="neem.jpg" alt="Neem">
+        <h3>Neem</h3>
+        <p>Purifies blood, treats skin disorders, and supports oral health.</p>
+      </div>
+      <div class="herb" data-name="Brahmi" data-image="bramhi.jpg">
+        <img src="bramhi.jpg" alt="Brahmi">
+        <h3>Brahmi</h3>
+        <p>Enhances memory, reduces anxiety, and improves cognitive function.</p>
+      </div>
+      <div class="herb" data-name="Giloy" data-image="Giloy.jpg">
+        <img src="giloy.jpg" alt="Giloy">
+        <h3>Giloy</h3>
+        <p>Boosts immunity, detoxifies the body, and fights chronic diseases.</p>
+      </div>
+      <div class="herb" data-name="Aloe Vera" data-image="aloevera.jpg">
+        <img src="aloevera.jpg" alt="aloevera">
+        <h3>Aloe Vera</h3>
+        <p>Heals burns, moisturizes skin, fights acne, promotes hair growth and reduces dandruff.</p>
+      </div>
+      <div class="herb" data-name="Bhringraj" data-image="bhringraj.jpg">
+        <img src="bhringraj.jpg" alt="Bhringraj">
+        <h3>Bhringraj</h3>
+        <p>Promotes hair growth, reduces hair fall, prevents dandruff, delays graying and improves complexion.</p>
+      </div>
+      <div class="herb" data-name=" Guduchi" data-image="Guduchi.jpg">
+        <img src="guduchi.jpeg" alt="Guduchi">
+        <h3> Guduchi</h3>
+        <p>Boosts immunity, detoxifies the body, improves digestion, reduces stress, supports liver health, regulates blood sugar.</p>
+      </div>
+      <div class="herb" data-name="Ginger" data-image="Ginger.jpg">
+        <img src="ginger.jpg" alt="Ginger">
+        <h3>Ginger</h3>
+        <p>Aids digestion, boosts immunity, reduces inflammation, relieves nausea, supports heart health.</p>
+      </div>
+    </div>
+    <p id="herb-info"></p>
+  </section>
+     
+  <div class="container">
+    <h1>Herbal Drinks Recipes</h1>
+    <div class="recipe-selector">
+        <select id="recipeDropdown" onchange="selectRecipe()">
+            <option value="" disabled selected>Select a Recipe</option>
+            <option value="Turmeric Golden Milk">Turmeric Golden Milk</option>
+            <option value="Ashwagandha Stress-Relief Tea">Ashwagandha Stress-Relief Tea</option>
+            <option value="Tulsi Detox Tea">Tulsi Detox Tea</option>
+            <option value="Neem Bitter Detox Juice">Neem Bitter Detox Juice</option>
+            <option value="Brahmi Memory Booster Tea">Brahmi Memory Booster Tea</option>
+            <option value="Giloy Immunity Tea">Giloy Immunity Tea</option>
+            <option value="Aloe Vera Digestive Juice">Aloe Vera Digestive Juice</option>
+            <option value="Bhringraj Hair & Skin Tonic">Bhringraj Hair & Skin Tonic</option>
+        </select>
+    </div>
+    <div id="recipeDisplay" class="recipe-display" style="display: none;">
+        <h2 id="recipeTitle"></h2>
+        <p><strong>Ingredients:</strong> <span id="recipeIngredients"></span></p>
+        <div id="recipeStepsContainer"></div>
+    </div>
+</div>
+
+<section class="herbal-remedies">
+  <h2>Herbal Remedies</h2>
+  <p>Discover the benefits of powerful Ayurvedic herbs for holistic well-being.</p>
+  <div class="herb-container">
+    <div class="herb" data-name="Turmeric">
+      <img src="turmeric.jpg" alt="Turmeric">
+      <h3>Turmeric</h3>
+      <p>Powerful anti-inflammatory, boosts immunity, and promotes glowing skin.</p>
+      <button class="buy-now" onclick="buyNow('Turmeric')">Buy Now</button>
+    </div>
+    <div class="herb" data-name="Ashwagandha">
+      <img src="ashwagandha.jpg" alt="Ashwagandha">
+      <h3>Ashwagandha</h3>
+      <p>Reduces stress, enhances brain function, and supports energy levels.</p>
+      <button class="buy-now" onclick="buyNow('Ashwagandha')">Buy Now</button>
+    </div>
+    <div class="herb" data-name="Tulsi">
+      <img src="tulsi.jpg" alt="Tulsi">
+      <h3>Tulsi</h3>
+      <p>Boosts respiratory health, fights infections, and improves digestion.</p>
+      <button class="buy-now" onclick="buyNow('Tulsi')">Buy Now</button>
+    </div>
+    <div class="herb" data-name="Neem">
+      <img src="neem.jpg" alt="Neem">
+      <h3>Neem</h3>
+      <p>Purifies blood, enhances skin health, and supports immunity.</p>
+      <button class="buy-now" onclick="buyNow('Neem')">Buy Now</button>
+    </div>
+    <div class="herb" data-name="Amla">
+      <img src="amla.jpg" alt="Amla">
+      <h3>Amla</h3>
+      <p>Rich in Vitamin C, boosts immunity, and improves digestion.</p>
+      <button class="buy-now" onclick="buyNow('Amla')">Buy Now</button>
+    </div>
+    <div class="herb" data-name="Ginger">
+      <img src="ginger.jpg" alt="Ginger">
+      <h3>Ginger</h3>
+      <p>Supports digestion, reduces inflammation, and relieves nausea.</p>
+      <button class="buy-now" onclick="buyNow('Ginger')">Buy Now</button>
+    </div>
+  </div>
+</section>
+   
+<!-- Popup for showing herb details -->
+<div class="popup" id="popup">
+  <div class="popup-content">
+      <span class="close-btn">&times;</span>
+      <img id="popup-image" src="" alt="">
+      <h3 id="popup-title"></h3>
+      <p id="popup-description"></p>
+  </div>
+</div>
+
+  <script src="ayurvedic.js"></script>
+</body>
+</html>

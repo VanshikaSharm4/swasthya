@@ -1,0 +1,242 @@
+/* Herbal Remedies Section */
+.herbal-remedies {
+    background-color: #0F3D48;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Herb Card Container */
+.herb-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Individual Herb Cards */
+.herb {
+    background: white;
+    color: #0F3D48;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover Effects */
+.herb:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Herb Images */
+.herb img {
+    width: 60px;
+    height: 60px;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effect on Image */
+.herb:hover img {
+    transform: rotate(10deg) scale(1.2);
+}
+
+/* Info Text */
+#herb-info {
+    font-size: 1.2em;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Popup Modal */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Popup Content */
+.popup-content {
+    background: white;
+    color: #0F3D48;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    position: relative;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Popup Image */
+#popup-image {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 2.5em;
+}
+
+.herb-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.herb {
+    background:  #0F3D48;  
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.herb:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.herb h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.herb p {
+    font-size: 1.1em;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+.recipe-selector {
+    margin-bottom: 20px;
+}
+select {
+    padding: 10px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    border: none;
+}
+.recipe-display {
+    background: #123C44;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.recipe-display h2 {
+    font-size: 1.8em;
+}
+.recipe-display p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+
+.herbal-remedies {
+    background-color: #0F3D48;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.herb-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.herb {
+    background: white;
+    color: #0F3D48;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.herb:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.buy-now, .new-buy-now {
+    margin-top: 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #0F3D48;
+}
+
+.buy-now {
+    background: #FFD700;
+}
+
+.buy-now:hover {
+    background: #FFC107;
+}
+
+.new-buy-now {
+    background: #4CAF50;
+    margin-left: 5px;
+}
+
+.new-buy-now:hover {
+    background: #45A049;
+}
