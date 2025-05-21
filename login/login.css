@@ -1,0 +1,107 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #e0f2f1;
+    color: #2c3e50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Wrapper */
+  .wrapper {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+  }
+  
+  /* Form Styling */
+  .form-box h2 {
+    font-size: 1.8rem;
+    color: #00796b;
+    margin-bottom: 1rem;
+  }
+  .input-box {
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+  .input-box input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #00796b;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
+  }
+  .input-box label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    background: white;
+    padding: 0 5px;
+    color: #00796b;
+    font-size: 0.9rem;
+    transition: 0.3s;
+  }
+  .input-box input:focus + label,
+  .input-box input:valid + label {
+    top: 0;
+    font-size: 0.75rem;
+  }
+  
+  /* Remember & Forgot Password */
+  .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+  .remember-forgot a {
+    color: #00796b;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  .remember-forgot a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Login Button */
+  .btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .btn:hover {
+    background-color: #004d40;
+  }
+  
+  /* Register Link */
+  .login-register {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+  .login-register a {
+    color: #00796b;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  .login-register a:hover {
+    text-decoration: underline;
+  }
+  
