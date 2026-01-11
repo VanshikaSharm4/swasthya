@@ -1,7 +1,7 @@
 // Replace with your Gemini API key
 // const API_KEY = 'AIzaSyBqLyEM3KTC1eVJakW3gIkug1C4cPvN-a8';
 
-const API_KEY = 'AIzaSyCtDG67tPdZuyyqsLzYShqyI2crh0su7SU';
+const API_KEY = 'AIzaSyAbi8MDcJSVSG-PY-uMZPdbvyDCrZjlmCE';
 const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
 
 const chatMessages = document.getElementById('chat-messages');
@@ -88,4 +88,5 @@ userInput.addEventListener('keypress', (e) => {
     }
 
 }); 
+
 
